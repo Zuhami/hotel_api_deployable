@@ -3,6 +3,11 @@
 This is a simple REST API for a hotel booking system. 
 It is implemented using Javalin and JPA
 
+It is prepared for [deployment following the tuturials here](https://dat3cph.github.io/material/deployment/exercises/full-pipeline/).
+
+In case you need to set up a Droplet at Digital Ocean, 
+you can use this link for tutorials: [Digital Ocean tutorials](https://dat3cph.github.io/material/toolbox/deployment/digitalocean-signup/)
+
 ![Hotel](./docs/bates_hotel.jpg)
 
 ### How to run
