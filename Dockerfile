@@ -1,6 +1,8 @@
 # Start with Amazon Corretto 17 Alpine base image
 FROM amazoncorretto:17-alpine
 
+RUN apt-get update && apt-get install -y curl
+
 # Copy the jar file into the image
 COPY target/app.jar /app.jar
 
