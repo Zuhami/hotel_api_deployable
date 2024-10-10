@@ -21,6 +21,7 @@ public class ApplicationConfig {
     private static SecurityController securityController = SecurityController.getInstance();
     private static AccessController accessController = new AccessController();
     private static Logger logger = LoggerFactory.getLogger(ApplicationConfig.class);
+    private static int count = 1;
 
     public static void configuration(JavalinConfig config) {
         config.showJavalinBanner = false;
@@ -37,11 +38,17 @@ public class ApplicationConfig {
         app.beforeMatched(accessController::accessHandler);
 
         app.beforeMatched(ctx -> accessController.accessHandler(ctx));
+        app.after(ApplicationConfig::afterRequest);
 
         app.exception(Exception.class, ApplicationConfig::generalExceptionHandler);
         app.exception(ApiException.class, ApplicationConfig::apiExceptionHandler);
         app.start(port);
         return app;
+    }
+
+    public static void afterRequest(Context ctx) {
+        String requestInfo = ctx.req().getMethod() + " " + ctx.req().getRequestURI();
+        logger.info(" Request {} - {} was handled with status code {}", count++, requestInfo, ctx.status());
     }
 
     public static void stopServer(Javalin app) {
