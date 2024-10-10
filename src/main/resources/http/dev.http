@@ -45,15 +45,16 @@ Authorization: Bearer {{jwt_token}}
 
 ###
 GET {{url}}/hotels
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
 
 ###
-
 GET {{url}}/hotels/2
 
 ###
-
 POST {{url}}/hotels
 Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
 
 {
   "hotelName": "Holiday Inn",
@@ -62,7 +63,6 @@ Content-Type: application/json
 }
 
 ###
-
 PUT {{url}}/hotels/3
 Content-Type: application/json
 
@@ -73,23 +73,22 @@ Content-Type: application/json
 }
 
 ###
-
 DELETE {{url}}/hotels/5
-
-###
+Authorization: Bearer {{jwt_token}}
 
 // Room API
 
 GET {{url}}/rooms
+Authorization: Bearer {{jwt_token}}
 
 ###
-
 GET {{url}}/rooms/1
+Authorization: Bearer {{jwt_token}}
 
 ###
-
-POST {{url}}/rooms/hotel/3
+POST {{url}}/rooms/hotel/1
 Content-Type: application/json
+Authorization: Bearer {{jwt_token}}
 
 {
   "roomNumber": 11,

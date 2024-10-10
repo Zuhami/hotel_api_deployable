@@ -7,6 +7,7 @@ import dat.dtos.HotelDTO;
 import dat.entities.Hotel;
 import io.javalin.http.Context;
 import jakarta.persistence.EntityManagerFactory;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -84,4 +85,8 @@ public class HotelController implements IController<HotelDTO, Integer> {
                 .get();
     }
 
+    public void populate(Context ctc) {
+        dao.populate();
+        ctc.res().setStatus(200);
+    }
 }

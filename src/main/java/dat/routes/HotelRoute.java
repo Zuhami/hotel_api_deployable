@@ -18,6 +18,7 @@ public class HotelRoute {
             get("/{id}", hotelController::read);
             put("/{id}", hotelController::update);
             delete("/{id}", hotelController::delete);
+            get("/populate", hotelController::populate);
         };
     }
 }
