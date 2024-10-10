@@ -191,6 +191,7 @@ public class SecurityController implements ISecurityController {
         };
     }
 
+    // Health check for the API. Used in deployment
     public void healthCheck(@NotNull Context ctx) {
         ctx.status(200).json("{\"msg\": \"API is up and running\"}");
     }
