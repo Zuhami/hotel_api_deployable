@@ -85,8 +85,10 @@ public class HotelController implements IController<HotelDTO, Integer> {
                 .get();
     }
 
-    public void populate(Context ctc) {
+    public void populate(Context ctx) {
         dao.populate();
-        ctc.res().setStatus(200);
+        ctx.res().setStatus(200);
+        ctx.json("{ \"message\": \"Database has been populated\" }");
     }
 }
+
