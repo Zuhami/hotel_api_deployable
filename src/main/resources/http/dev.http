@@ -41,7 +41,7 @@ Accept: application/json
 Authorization: Bearer {{jwt_token}}
 
 {
-    "role": "superman"
+    "role": "admin"
 }
 Accept: application/json
 Authorization: Bearer {{jwt_token}}
@@ -80,7 +80,7 @@ DELETE {{url}}/hotels/5
 Authorization: Bearer {{jwt_token}}
 
 // Room API
-
+###
 GET {{url}}/rooms
 Authorization: Bearer {{jwt_token}}
 
