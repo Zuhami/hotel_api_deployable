@@ -11,6 +11,5 @@ COPY target/app.jar /app.jar
 EXPOSE 7070
 
 # Command to run your app
-# Set Java memory limits to control resource usage
-CMD ["java", "-XX:MaxRAMPercentage=75", "-jar", "/app.jar"]
+CMD ["java", "-jar", "/app.jar"]
 
