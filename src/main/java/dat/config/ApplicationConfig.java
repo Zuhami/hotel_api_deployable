@@ -36,8 +36,6 @@ public class ApplicationConfig {
         Javalin app = Javalin.create(ApplicationConfig::configuration);
 
         app.beforeMatched(accessController::accessHandler);
-
-        app.beforeMatched(ctx -> accessController.accessHandler(ctx));
         app.after(ApplicationConfig::afterRequest);
 
         app.exception(Exception.class, ApplicationConfig::generalExceptionHandler);

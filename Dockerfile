@@ -12,4 +12,3 @@ EXPOSE 7070
 
 # Command to run your app
 CMD ["java", "-jar", "/app.jar"]
-
